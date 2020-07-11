@@ -20,7 +20,7 @@ var upload = multer({storage:storage});
 
 // 上传头像
 Router.post('/headphoto',upload.single('avatar'),async(req,res)  =>{
-    let url = host + '/upload/' + req.file.filename;
+    let url = host + '/uploads/' + req.file.filename;
     let {_id}=req.body;
     _id = ObjectId(_id);
     let data = await mongo.update('user',{_id},{
