@@ -17,7 +17,7 @@ Router.get('/goodlist',async(req,res) =>{
             colName:'goods',
             page,
             pagesize:pagesize*1,
-            sortquery:sortquery*1
+            sortquery:{price:sortquery*1}
         });
         let allArr = await mongo.findall('goods');
         if(data.length){
